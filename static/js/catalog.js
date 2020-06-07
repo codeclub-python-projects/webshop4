@@ -7,13 +7,16 @@ $(document).ready(function () {
         let id = product.find('input').val();
 
         $.ajax({
-            type: 'GET',
-            url: '/goods/ajax_cart',
-            data: 'test=15',
-            success: function(result) {
-                alert('AJAX work fine!');
-            }
-        });
+			type: 'GET',
+			url: 'catalog',
+			data: `pid=${id}&price=${price_n}`,
+			success: function(result) {
+				alert('AJAX-OK');
+				alert(result.test);
+				alert(result.count);
+				alert(result.amount);
+			}
+		});
     });
 
 });

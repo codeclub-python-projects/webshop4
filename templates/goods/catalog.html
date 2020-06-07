@@ -193,7 +193,6 @@
 						<!-- /aside Widget -->
 					</div>
 					<!-- /ASIDE -->
-
 					<!-- STORE -->
 					<div id="store" class="col-md-9">
 						<!-- store products -->
@@ -202,7 +201,7 @@
 							<div class="col-md-4 col-xs-6">
 								<div class="product">
 									<div class="product-img">
-										<img src="/media/{{ p.photo }}" alt="" height="200">
+										<img src="/media/{{ p.photo }}" alt="" height="250">
 										<div class="product-label">
 											<span class="sale">-30%</span>
 											<span class="new">NEW</span>
@@ -255,34 +254,9 @@
 			<!-- /container -->
 		</div>
 	<!-- Конец шаблона -->
-<script src="https://code.jquery.com/jquery-latest.js"></script>
-<script>
-	$(document).ready(function () {
-
-	alert(3);
-
-    $('.add-to-cart-btn').click(function () {
-    	alert(4);
-        let product = $(this).parent().prev();
-        let price_s = product.find('h4').text();
-        let price_n = parseInt(price_s.split(' ')[0])
-        let id = product.find('input').val();
-
-        $.ajax({
-            type: 'GET',
-            url: "{% url 'ajax_cart' %}",
-            data: 'test=15',
-            success: function(result) {
-                alert('AJAX work fine!');
-            }
-        });
-    });
-
-});
-</script>
 {% endblock content %}
 
 
 {% block script %}
-
+	<script src="{% static 'js/catalog.js' %}"></script>
 {% endblock script %}

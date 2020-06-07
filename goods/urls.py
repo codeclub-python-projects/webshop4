@@ -1,8 +1,6 @@
 from django.urls import path
-from .views import GoodsCatalogView, AjaxCartRequest
-
+from .views import GoodsCatalogView
 
 urlpatterns = [
     path('catalog', GoodsCatalogView.as_view(), name='catalog'),
-    path('', AjaxCartRequest.as_view(), name='ajax_cart')
 ]
